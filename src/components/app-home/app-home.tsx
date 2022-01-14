@@ -15,9 +15,10 @@ export class AppHome {
         </p>
 
         <stencil-route-link url="/profile/stencil">
-          <button>Profile page</button>
+    <mwc-button  raised>Profile Page</mwc-button>
         </stencil-route-link>
         <app-counter></app-counter>
+        
       </div>
     );
   }
