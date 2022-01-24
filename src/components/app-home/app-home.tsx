@@ -3,23 +3,32 @@ import { Component, h } from '@stencil/core';
 @Component({
   tag: 'app-home',
   styleUrl: 'app-home.css',
-  shadow: true,
+  shadow: false,
+  scoped: true,
 })
 export class AppHome {
   render() {
-    return (
-      <div class="app-home">
-        <p>
-          Welcome to the Stencil App Starter. You can use this starter to build entire apps all with web components using Stencil! Check out our docs on{' '}
-          <a href="https://stenciljs.com">stenciljs.com</a> to get started.
-        </p>
-
-        <stencil-route-link url="/profile/stencil">
-    <mwc-button  raised>Profile Page</mwc-button>
-        </stencil-route-link>
-        <app-counter></app-counter>
-        
-      </div>
-    );
+    return [
+      <section class="hero is-medium is-link">
+        <div class="hero-body columns container">
+          <div class="column is-2">
+            <figure class="image is-128x128">
+              <img class="is-rounded" src="/assets/hammahamma.jpg" title="profile picture" />
+            </figure>
+          </div>
+          <div class="column">
+            <p class="title">Medium hero</p>
+            <p class="subtitle">Medium subtitle</p>
+          </div>
+        </div>
+      </section>,
+      <section class="section">
+        <div class="container">
+          <stencil-route-link url="/profile/stencil">
+            <mwc-button raised>Profile Page</mwc-button>
+          </stencil-route-link>
+        </div>
+      </section>,
+    ];
   }
 }

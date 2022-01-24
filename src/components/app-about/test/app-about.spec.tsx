@@ -1,18 +1,18 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { HeroSection } from '../hero-section';
+import { AppAbout } from '../app-about';
 
-describe('hero-section', () => {
+describe('app-about', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [HeroSection],
-      html: `<hero-section></hero-section>`,
+      components: [AppAbout],
+      html: `<app-about></app-about>`,
     });
     expect(page.root).toEqualHtml(`
-      <hero-section>
+      <app-about>
         <mock:shadow-root>
           <slot></slot>
         </mock:shadow-root>
-      </hero-section>
+      </app-about>
     `);
   });
 });

@@ -7,7 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { MatchResults } from "@stencil/router";
 export namespace Components {
-    interface AppCounter {
+    interface AppAbout {
     }
     interface AppHome {
     }
@@ -16,15 +16,13 @@ export namespace Components {
     }
     interface AppRoot {
     }
-    interface HeroSection {
-    }
 }
 declare global {
-    interface HTMLAppCounterElement extends Components.AppCounter, HTMLStencilElement {
+    interface HTMLAppAboutElement extends Components.AppAbout, HTMLStencilElement {
     }
-    var HTMLAppCounterElement: {
-        prototype: HTMLAppCounterElement;
-        new (): HTMLAppCounterElement;
+    var HTMLAppAboutElement: {
+        prototype: HTMLAppAboutElement;
+        new (): HTMLAppAboutElement;
     };
     interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
     }
@@ -44,22 +42,15 @@ declare global {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
     };
-    interface HTMLHeroSectionElement extends Components.HeroSection, HTMLStencilElement {
-    }
-    var HTMLHeroSectionElement: {
-        prototype: HTMLHeroSectionElement;
-        new (): HTMLHeroSectionElement;
-    };
     interface HTMLElementTagNameMap {
-        "app-counter": HTMLAppCounterElement;
+        "app-about": HTMLAppAboutElement;
         "app-home": HTMLAppHomeElement;
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
-        "hero-section": HTMLHeroSectionElement;
     }
 }
 declare namespace LocalJSX {
-    interface AppCounter {
+    interface AppAbout {
     }
     interface AppHome {
     }
@@ -68,25 +59,21 @@ declare namespace LocalJSX {
     }
     interface AppRoot {
     }
-    interface HeroSection {
-    }
     interface IntrinsicElements {
-        "app-counter": AppCounter;
+        "app-about": AppAbout;
         "app-home": AppHome;
         "app-profile": AppProfile;
         "app-root": AppRoot;
-        "hero-section": HeroSection;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "app-counter": LocalJSX.AppCounter & JSXBase.HTMLAttributes<HTMLAppCounterElement>;
+            "app-about": LocalJSX.AppAbout & JSXBase.HTMLAttributes<HTMLAppAboutElement>;
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
-            "hero-section": LocalJSX.HeroSection & JSXBase.HTMLAttributes<HTMLHeroSectionElement>;
         }
     }
 }
