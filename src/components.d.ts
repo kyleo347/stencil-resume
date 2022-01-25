@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { MatchResults } from "@stencil/router";
+import { LocationSegments, MatchResults } from "@stencil/router";
 export namespace Components {
     interface AppAbout {
     }
@@ -15,6 +15,10 @@ export namespace Components {
         "match": MatchResults;
     }
     interface AppRoot {
+        /**
+          * Remember, this should be `location only`
+         */
+        "location": LocationSegments;
     }
 }
 declare global {
@@ -58,6 +62,10 @@ declare namespace LocalJSX {
         "match"?: MatchResults;
     }
     interface AppRoot {
+        /**
+          * Remember, this should be `location only`
+         */
+        "location"?: LocationSegments;
     }
     interface IntrinsicElements {
         "app-about": AppAbout;

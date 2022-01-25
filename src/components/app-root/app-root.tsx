@@ -1,4 +1,5 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, Listen, Prop, Watch } from '@stencil/core';
+import { injectHistory, LocationSegments } from '@stencil/router';
 import store from '../../store';
 
 @Component({
@@ -35,8 +36,8 @@ export class AppRoot {
             <stencil-router>
               <stencil-route-switch scrollTopOffset={0}>
                 <stencil-route url="/about" component="app-about" exact={true} />
-                <stencil-route url="/" component="app-home" exact={true} />
                 <stencil-route url="/profile/:name" component="app-profile" />
+                <stencil-route url="/" component="app-home" exact={true} />
               </stencil-route-switch>
             </stencil-router>
           </main>
@@ -44,4 +45,23 @@ export class AppRoot {
       </mwc-drawer>
     );
   }
+
+  /**
+   * Remember, this should be `location only`
+   */
+  @Prop() location: LocationSegments;
+  /**
+   * Now watch for any changes to the location property
+   */
+  @Watch('location') onRouteChange(newRoute, oldRoute) {
+    // Do some epic shit
+    // Like changing document title or
+    // Route animations. Its your choice.
+  }
+  @Listen('MDCDrawer:closed')
+  MDCDrawerCloseHandler() {
+    store.state.drawerOpen = false;
+  }
 }
+
+injectHistory(AppRoot);
