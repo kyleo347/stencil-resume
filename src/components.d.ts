@@ -15,9 +15,6 @@ export namespace Components {
         "match": MatchResults;
     }
     interface AppRoot {
-        /**
-          * Remember, this should be `location only`
-         */
         "location": LocationSegments;
     }
 }
@@ -62,9 +59,6 @@ declare namespace LocalJSX {
         "match"?: MatchResults;
     }
     interface AppRoot {
-        /**
-          * Remember, this should be `location only`
-         */
         "location"?: LocationSegments;
     }
     interface IntrinsicElements {

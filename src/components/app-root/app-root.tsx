@@ -46,17 +46,11 @@ export class AppRoot {
     );
   }
 
-  /**
-   * Remember, this should be `location only`
-   */
   @Prop() location: LocationSegments;
-  /**
-   * Now watch for any changes to the location property
-   */
+
   @Watch('location') onRouteChange(newRoute, oldRoute) {
-    // Do some epic shit
-    // Like changing document title or
-    // Route animations. Its your choice.
+    console.log(oldRoute);
+    console.log(newRoute);
   }
   @Listen('MDCDrawer:closed')
   MDCDrawerCloseHandler() {
