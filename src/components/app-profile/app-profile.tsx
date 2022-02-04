@@ -1,4 +1,5 @@
 import { Component, Prop, h } from '@stencil/core';
+import Helmet from '@stencil/helmet';
 import { MatchResults } from '@stencil/router';
 
 @Component({
@@ -18,11 +19,14 @@ export class AppProfile {
 
   render() {
     if (this.match && this.match.params.name) {
-      return (
+      return [
+        <Helmet>
+          <title>Profile</title>
+        </Helmet>,
         <div class="app-profile">
           <p>Hello! My name is {this.normalize(this.match.params.name)}. My name was passed in through a route param!</p>
-        </div>
-      );
+        </div>,
+      ];
     }
   }
 }

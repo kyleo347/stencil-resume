@@ -1,4 +1,5 @@
 import { Component, h } from '@stencil/core';
+import Helmet from '@stencil/helmet';
 
 @Component({
   tag: 'app-about',
@@ -6,7 +7,10 @@ import { Component, h } from '@stencil/core';
 })
 export class AppAbout {
   render() {
-    return (
+    return [
+      <Helmet>
+        <title>About</title>
+      </Helmet>,
       <section class="section">
         <div class="container content">
           <p>This site was built with:</p>
@@ -28,7 +32,7 @@ export class AppAbout {
             </li>
           </ul>
         </div>
-      </section>
-    );
+      </section>,
+    ];
   }
 }

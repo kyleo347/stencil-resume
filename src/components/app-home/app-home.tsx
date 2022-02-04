@@ -1,4 +1,5 @@
 import { Component, h } from '@stencil/core';
+import Helmet from '@stencil/helmet';
 
 @Component({
   tag: 'app-home',
@@ -9,6 +10,9 @@ import { Component, h } from '@stencil/core';
 export class AppHome {
   render() {
     return [
+      <Helmet>
+        <title>Home</title>
+      </Helmet>,
       <section class="hero is-medium is-link">
         <div class="hero-body">
           <div class="columns is-vcentered">
