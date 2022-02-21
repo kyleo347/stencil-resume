@@ -8,6 +8,10 @@ import Helmet from '@stencil/helmet';
   scoped: true,
 })
 export class AppHome {
+  skills = ['HTML', 'CSS', 'Javascript', 'Typescript', 'Angular', 'React', 'Web Components', 'Static Site Generator', 'Headless CMS', 'Unit Tests', 'E2E Tests', 'Azure', 'AWS'];
+  skillClicked = (skill: string) => {
+    (window as any).dataLayer.push({ event: 'skill_clicked', value: skill });
+  };
   render() {
     return [
       <Helmet>
@@ -32,19 +36,11 @@ export class AppHome {
         <div class="container">
           <h2 class="title">Skills</h2>
           <div class="tags are-medium">
-            <span class="tag is-success is-rounded">HTML</span>
-            <span class="tag is-success is-rounded">CSS</span>
-            <span class="tag is-success is-rounded">Javascript</span>
-            <span class="tag is-success is-rounded">Typescript</span>
-            <span class="tag is-success is-rounded">Angular</span>
-            <span class="tag is-success is-rounded">React</span>
-            <span class="tag is-success is-rounded">Web Components</span>
-            <span class="tag is-success is-rounded">Static Site Generator</span>
-            <span class="tag is-success is-rounded">Headless CMS</span>
-            <span class="tag is-success is-rounded">Unit Tests</span>
-            <span class="tag is-success is-rounded">E2E Tests</span>
-            <span class="tag is-success is-rounded">Azure</span>
-            <span class="tag is-success is-rounded">AWS</span>
+            {this.skills.map(skill => (
+              <span class="tag is-success is-rounded" onClick={() => this.skillClicked(skill)}>
+                {skill}
+              </span>
+            ))}
           </div>
           <stencil-route-link url="/profile/stencil">
             <mwc-button raised>Profile Page</mwc-button>

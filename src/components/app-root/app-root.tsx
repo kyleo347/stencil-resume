@@ -51,6 +51,7 @@ export class AppRoot {
   @Watch('location') onRouteChange(newRoute, oldRoute) {
     console.log(oldRoute);
     console.log(newRoute);
+    (window as any).dataLayer.push({ event: 'spa_navigate', value: newRoute });
   }
   @Listen('MDCDrawer:closed')
   MDCDrawerCloseHandler() {
