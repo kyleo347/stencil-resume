@@ -10,7 +10,7 @@ import Helmet from '@stencil/helmet';
 export class AppHome {
   skills = ['HTML', 'CSS', 'Javascript', 'Typescript', 'Angular', 'React', 'Web Components', 'Static Site Generator', 'Headless CMS', 'Unit Tests', 'E2E Tests', 'Azure', 'AWS'];
   skillClicked = (skill: string) => {
-    (window as any).dataLayer.push({ event: 'skill_clicked', value: skill });
+    (window as any).dataLayer.push({ event: 'skill_clicked', skill: skill });
   };
   render() {
     return [
