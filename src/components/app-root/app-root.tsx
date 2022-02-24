@@ -27,10 +27,10 @@ export class AppRoot {
           </stencil-route-link>
         </mwc-list>
         <div slot="appContent">
-          <mwc-top-app-bar>
+          <mwc-top-app-bar-fixed>
             <mwc-icon-button slot="navigationIcon" icon="menu" onClick={this.toggle}></mwc-icon-button>
             <div slot="title"></div>
-          </mwc-top-app-bar>
+          </mwc-top-app-bar-fixed>
 
           <main>
             <stencil-router>

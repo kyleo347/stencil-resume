@@ -18,6 +18,7 @@
     "@material/mwc-icon-button": "^0.25.3",
     "@material/mwc-list": "^0.25.3",
     "@material/mwc-top-app-bar": "^0.25.3",
+    "@material/mwc-top-app-bar-fixed": "^0.25.3",
     "@stencil/core": "^2.7.0",
     "@stencil/helmet": "^0.3.2",
     "@stencil/router": "^1.0.1",
