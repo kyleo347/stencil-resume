@@ -37,7 +37,7 @@ export class AppHome {
           <h2 class="title">Skills</h2>
           <div class="tags are-medium">
             {this.skills.map(skill => (
-              <span class="tag is-success is-rounded" onClick={() => this.skillClicked(skill)}>
+              <span class="tag is-success is-rounded skill" onClick={() => this.skillClicked(skill)}>
                 {skill}
               </span>
             ))}
